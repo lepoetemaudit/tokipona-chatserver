@@ -1,0 +1,23 @@
+<head>
+</head>
+
+<body>
+	<p>Hello world</p>
+	<script>
+		var exampleSocket = new WebSocket("ws://localhost:8080");
+		exampleSocket.onopen = function(ev) {
+			exampleSocket.send("Hello socket!");
+
+			var i = 0;
+
+			setInterval(function() {
+				i++;
+				exampleSocket.send("Hello msg " + i.toString());
+			}, 1000);
+		}
+
+		exampleSocket.onmessage = function(ev) {
+			console.log(ev.data);
+		}
+	</script>
+</body>

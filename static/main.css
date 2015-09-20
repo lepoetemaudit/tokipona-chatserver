@@ -1,0 +1,7 @@
+input#entry {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 32px;
+	margin-right: -64px;
+}
